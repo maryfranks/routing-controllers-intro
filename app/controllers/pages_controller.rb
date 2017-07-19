@@ -12,7 +12,7 @@ before_action :set_kitten_url, only: [:kitten, :kittens]
 
   def contest
     flash[:notice] = "Sorry, the contest has ended"
-    redirect_to "/welcome"
+    redirect_to welcome_path
   end
 
   def kitten
@@ -26,8 +26,8 @@ before_action :set_kitten_url, only: [:kitten, :kittens]
       render :secrets
     else
       flash[:alert] = "Sorry, you're not authorized to see that page!"
-      redirect_to "/welcome"
-    end 
+      redirect_to welcome_path
+    end
   end
 
   def set_kitten_url
